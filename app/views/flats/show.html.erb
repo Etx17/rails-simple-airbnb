@@ -1,2 +1,49 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+<div class="map" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200')"></div>
+
+<div class="container margin-top-negative">
+
+  <div class="row">
+    <div class="col-8">
+      <div class="flat-show-card">
+        <h1><%= @flat.name %></h1>
+        <p class="flat-show-address"><%= @flat.address %></p>
+      </div>
+
+      <div class="flat-show-card">
+        <h3>A bit more about this flat</h3>
+        <p><%= @flat.description %></p>
+        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=EustonRdLondonN1C4QP&amp;zoom=13&amp;scale=2&amp;size=1000&amp;maptype=roadmap&amp;markers=color:red%7CEustonRdLondonN1C4QP&amp;key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
+      </div>
+
+    </div>
+    <div class="col-4">
+
+      <div class="flat-show-card">
+        <h5>Book this place!</h5>
+        <%= form_for(@flat) do |f| %>
+        <% end %>
+      </div>
+
+      <div class="flat-show-card">
+        <h4>Details</h4>
+        <%= @flat.price_per_night %>
+        <%= @flat.number_of_guests %>
+      </div>
+
+      <div class="flat-show-card">
+        <h4>Share</h4>
+       <ul class="list-group">
+        <li class="list-item"><a href="#"><i class="material-icons">Facebook</i></a></li>
+        <li class="list-item"><a href="#"><i class="material-icons">Instagram</i></a></li>
+        <li class="list-item"><a href="#"><i class="material-icons">Twitter</i></a></li>
+       </ul>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<%= link_to "Edit flat", edit_flat_path(@flat) %>
+<%= link_to "Back to flat list", flats_path %>
